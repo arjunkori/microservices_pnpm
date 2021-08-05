@@ -12,8 +12,9 @@ router.get('/',(req,res)=>{
 
 router.get('/hunter',async(req,res)=>{
     console.debug('calling hunter service');
-    let result  = await models.customer_info.findAll({});
-    res.send(result);
+    //let result  = await models.customer_info.findAll({});
+    let response = await callHunter('dasdasd')
+    res.send(response);
 })
 
 module.exports = router;

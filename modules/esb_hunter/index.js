@@ -1,16 +1,20 @@
+const { models } = require('orm');
+
 //construct request
 //encrypt the request
 //call the hunter
 //save into db
 
 async function getUserData(params) {
-	const users = {};//await models.user.findAll();
-	res.status(200).json(users);
+	const users = await models.customer_info.findAll();
+    return users;
+	//res.status(200).json(users);
 };
 
-async function constructRequest(params){
+function constructRequest(params){
     let request_header={};
-    let request_body={};
+    let request_body = {header:'',body:''};
+    return request_body;
 }
 
 //call encrypt service
@@ -19,8 +23,9 @@ async function constructRequest(params){
 
 
 async function callHunter(params){
-    let userdata = await getUserData(params.app_ref_id);
-    let request = await constructRequest(userdata);
+    let userdata = await getUserData(params);
+    let request = constructRequest(userdata);
+    return request;
 }
 
 //log the request and response
