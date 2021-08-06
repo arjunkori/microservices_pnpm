@@ -1,0 +1,11 @@
+{
+	"scripts": {},
+	"dependencies": {
+		"all": "*",
+		"dotenv": "8.2.0",
+		"esb_hunter": "link:modules/esb_hunter",
+		"express": "^4.17.1",
+		"orm": "file:./modules/orm/",
+		"pnpm": "6.10.3"
+	}
+}
